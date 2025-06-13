@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_blog_posts_teasers",
+  "info": {
+    "displayName": "Blog Posts Teaser",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "posts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.post-teaser",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

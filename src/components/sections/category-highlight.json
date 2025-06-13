@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_category_highlights",
+  "info": {
+    "displayName": "Category Highlight",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.category-card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

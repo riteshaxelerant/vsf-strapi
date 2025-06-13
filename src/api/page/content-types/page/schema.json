@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "displayName": "Page",
+    "singularName": "page",
+    "pluralName": "pages",
+    "description": "Pages for the site"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "title",
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "publishAt": {
+      "type": "datetime"
+    },
+    "contentSections": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "sections.hero-banner",
+        "sections.product-slider",
+        "sections.testimonials",
+        "sections.faq-section",
+        "sections.blog-posts-teaser",
+        "sections.rich-text-block",
+        "sections.promotional-cta",
+        "sections.category-highlight",
+        "sections.image-carousel",
+        "sections.feature-grid",
+        "shared.category-card"
+      ]
+    }
+  }
+}

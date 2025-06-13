@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_feature_grids",
+  "info": {
+    "displayName": "Feature Grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.feature",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

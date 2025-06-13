@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_product_sliders",
+  "info": {
+    "displayName": "Product Slider",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.product-slide",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

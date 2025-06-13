@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_image_carousels",
+  "info": {
+    "displayName": "Image Carousel",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "allowedTypes": [
+        "images"
+      ],
+      "multiple": true,
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    }
+  }
+}
