@@ -68,6 +68,42 @@
         "sections.feature-grid",
         "shared.category-card"
       ]
+    },
+    "multipleCategories": {
+      "type": "customField",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "customField": "plugin::load-commerce-categories.commerce_categories_input"
+    },
+    "singleCategory": {
+      "type": "customField",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "customField": "plugin::load-commerce-categories.commerce_category_input"
+    },
+    "categoryWithProduct": {
+      "type": "customField",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "customField": "plugin::load-commerce-categories.commerce_category_product_input"
+    },
+    "produts": {
+      "type": "customField",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "customField": "plugin::load-commerce-categories.commerce_product_input"
     }
   }
 }

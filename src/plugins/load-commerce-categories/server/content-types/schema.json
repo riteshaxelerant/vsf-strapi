@@ -1,0 +1,29 @@
+{
+    "kind": "collectionType",
+    "collectionName": "load_commerce_categories_cache",
+    "info": {
+      "singularName": "commerce-category-cache",
+      "pluralName": "commerce-category-caches",
+      "displayName": "Commerce Category Cache",
+      "description": "Cache for E-Commerce categories"
+    },
+    "options": {
+      "draftAndPublish": false
+    },
+    "pluginOptions": {
+      "content-manager": {
+        "visible": false
+      },
+      "content-type-builder": {
+        "visible": false
+      }
+    },
+    "attributes": {
+      "categories": {
+        "type": "string"
+      },
+      "lastFetch": {
+        "type": "datetime"
+      }
+    }
+  }

@@ -555,6 +555,13 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    categoryWithProduct: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::load-commerce-categories.commerce_category_product_input'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     contentSections: Schema.Attribute.DynamicZone<
       [
         'sections.hero-banner',
@@ -580,9 +587,30 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
+    multipleCategories: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<'plugin::load-commerce-categories.commerce_categories_input'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    produts: Schema.Attribute.JSON &
+      Schema.Attribute.CustomField<'plugin::load-commerce-categories.commerce_product_input'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    singleCategory: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::load-commerce-categories.commerce_category_input'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
