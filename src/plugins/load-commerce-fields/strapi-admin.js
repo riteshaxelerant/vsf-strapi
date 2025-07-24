@@ -6,7 +6,7 @@ export default {
   async register(app) {
     const pluginInfo = {
       id: pluginId,
-      name: 'Load Commerce Categories',
+      name: 'Load Commerce Fields',
     };
 
     const plugin = await import('./admin/src/index.js');

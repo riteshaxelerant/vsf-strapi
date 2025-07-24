@@ -1,21 +1,21 @@
-import pluginId from './pluginId';
+import pluginId from "./pluginId";
 //import PluginIcon from './components/PluginIcon';
-import mutateEditViewLayout from './mutateEditViewLayout';
+import mutateEditViewLayout from "./mutateEditViewLayout";
 
-const name = 'load-commerce-categories';
+const name = "load-commerce-fields";
 
 export default {
-  register(app) {   
+  register(app) {
     app.customFields.register({
       name: "commerce_category_input",
-      pluginId: pluginId, 
+      pluginId: pluginId,
       type: "string",
       intlLabel: {
-        id: "commerce-category-input.load-commerce-categories.label",
+        id: "commerce-category-input.load-commerce-fields.label",
         defaultMessage: "Commerce Category",
       },
       intlDescription: {
-        id: "commerce-category-input.load-commerce-categories.description",
+        id: "commerce-category-input.load-commerce-fields.description",
         defaultMessage: "Select Category",
       },
       components: {
@@ -24,19 +24,19 @@ export default {
       options: {
         // declare options here
       },
-    }); 
+    });
 
     // Regiser multiselect field for categories
     app.customFields.register({
       name: "commerce_categories_input",
-      pluginId: pluginId, 
+      pluginId: pluginId,
       type: "json",
       intlLabel: {
-        id: "commerce-categories-input.load-commerce-categories.label",
+        id: "commerce-categories-input.load-commerce-fields.label",
         defaultMessage: "Commerce Categories",
       },
       intlDescription: {
-        id: "commerce-categories-input.load-commerce-categories.description",
+        id: "commerce-categories-input.load-commerce-fields.description",
         defaultMessage: "Select Categories",
       },
       components: {
@@ -45,19 +45,19 @@ export default {
       options: {
         // declare options here
       },
-    }); 
-    
+    });
+
     // Register the product input field
     app.customFields.register({
       name: "commerce_product_input",
-      pluginId: pluginId, 
+      pluginId: pluginId,
       type: "json",
       intlLabel: {
-        id: "commerce-product-input.load-commerce-categories.label",
+        id: "commerce-product-input.load-commerce-fields.label",
         defaultMessage: "Commerce Products",
       },
       intlDescription: {
-        id: "commerce-product-input.load-commerce-categories.description",
+        id: "commerce-product-input.load-commerce-fields.description",
         defaultMessage: "Select Products",
       },
       components: {
@@ -67,18 +67,18 @@ export default {
         // declare options here
       },
     });
-    
+
     // Register the combined category-product input field
     app.customFields.register({
       name: "commerce_category_product_input",
-      pluginId: pluginId, 
+      pluginId: pluginId,
       type: "json",
       intlLabel: {
-        id: "commerce-category-product-input.load-commerce-categories.label",
+        id: "commerce-category-product-input.load-commerce-fields.label",
         defaultMessage: "Commerce Category & Product",
       },
       intlDescription: {
-        id: "commerce-category-product-input.load-commerce-categories.description",
+        id: "commerce-category-product-input.load-commerce-fields.description",
         defaultMessage: "Select Category and Product",
       },
       components: {
@@ -88,10 +88,13 @@ export default {
         // declare options here
       },
     });
-    
+
     app.registerPlugin({
       id: pluginId,
-      initializer: Initializer => import('./components/Initializer').then(component => component.default),
+      initializer: (Initializer) =>
+        import("./components/Initializer").then(
+          (component) => component.default
+        ),
       isReady: false,
       name,
     });
@@ -101,8 +104,8 @@ export default {
     // https://github.com/strapi/strapi/blob/0f9b69298b2d94b31b434bd7217060570ae89374/packages/core/admin/admin/src/exposedHooks.js
     // MUTATE_EDIT_VIEW_LAYOUT
     app.registerHook(
-      'Admin/CM/pages/EditView/mutate-edit-view-layout',
-      mutateEditViewLayout,
+      "Admin/CM/pages/EditView/mutate-edit-view-layout",
+      mutateEditViewLayout
     );
   },
   async registerTrads({ locales }) {
@@ -112,7 +115,7 @@ export default {
           .then(({ default: data }) => {
             // Simple prefix function to replace prefixPluginTranslations
             const prefixedData = {};
-            Object.keys(data).forEach(key => {
+            Object.keys(data).forEach((key) => {
               prefixedData[`${pluginId}.${key}`] = data[key];
             });
             return {

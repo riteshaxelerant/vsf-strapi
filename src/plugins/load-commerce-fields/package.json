@@ -1,5 +1,5 @@
 {
-  "name": "load-commerce-categories",
+  "name": "load-commerce-fields",
   "version": "1.0.0",
   "description": "Strapi plugin to load commerce categories and products from external GraphQL API",
   "main": "strapi-server.js",
@@ -7,8 +7,8 @@
     "strapi-plugin"
   ],
   "strapi": {
-    "name": "load-commerce-categories",
-    "displayName": "Load Commerce Categories",
+    "name": "load-commerce-fields",
+    "displayName": "Load Commerce Fields",
     "description": "Load commerce categories and products from external GraphQL API",
     "kind": "plugin"
   },

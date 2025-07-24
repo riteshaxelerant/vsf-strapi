@@ -4,7 +4,7 @@ const https = require('https');
 
 module.exports = ({ strapi }) => ({
   async getCommerceCategories() {
-    const pluginConfig = strapi.config.get("plugin::load-commerce-categories");
+    const pluginConfig = strapi.config.get("plugin::load-commerce-fields");
     const endpoint = pluginConfig.graphqlEndpoint;
     console.log('GraphQL Endpoint:', endpoint);
     if (!endpoint) {
@@ -178,7 +178,7 @@ module.exports = ({ strapi }) => ({
 
   // New method to fetch products by category
   async getProductsByCategory(categoryUid) {
-    const pluginConfig = strapi.config.get("plugin::load-commerce-categories");
+    const pluginConfig = strapi.config.get("plugin::load-commerce-fields");
     const endpoint = pluginConfig.graphqlEndpoint;
     if (!endpoint) {
       throw new Error("Magento GraphQL endpoint is not configured");
@@ -248,7 +248,7 @@ module.exports = ({ strapi }) => ({
 
   // New method to search products by name
   async searchProducts(searchTerm) {
-    const pluginConfig = strapi.config.get("plugin::load-commerce-categories");
+    const pluginConfig = strapi.config.get("plugin::load-commerce-fields");
     const endpoint = pluginConfig.graphqlEndpoint;
     if (!endpoint) {
       throw new Error("Magento GraphQL endpoint is not configured");
