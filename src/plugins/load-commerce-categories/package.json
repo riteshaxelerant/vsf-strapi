@@ -1,0 +1,23 @@
+{
+  "name": "load-commerce-categories",
+  "version": "1.0.0",
+  "description": "Strapi plugin to load commerce categories and products from external GraphQL API",
+  "main": "strapi-server.js",
+  "keywords": [
+    "strapi-plugin"
+  ],
+  "strapi": {
+    "name": "load-commerce-categories",
+    "displayName": "Load Commerce Categories",
+    "description": "Load commerce categories and products from external GraphQL API",
+    "kind": "plugin"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-select": "^5.10.1"
+  },
+  "author": "Ritesh tailor",
+  "license": "MIT"
+}
