@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_questionnaire_questions",
+  "info": {
+    "displayName": "questions"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "questionType": {
+      "type": "enumeration",
+      "enum": [
+        "units",
+        "range",
+        "worktop-style",
+        "installation-type",
+        "flooring",
+        "sink-type",
+        "tap-type",
+        "storage-type",
+        "appliances"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "toolTip": {
+      "type": "text"
+    },
+    "questionOptions": {
+      "type": "component",
+      "component": "questionnaire.questionnaire-options",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

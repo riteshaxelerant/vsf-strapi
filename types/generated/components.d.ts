@@ -1,5 +1,83 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface QuestionnaireColorVariant extends Struct.ComponentSchema {
+  collectionName: 'components_questionnaire_color_variants';
+  info: {
+    displayName: 'Color Variant';
+  };
+  attributes: {
+    colorCode: Schema.Attribute.String;
+    colorName: Schema.Attribute.String;
+    price: Schema.Attribute.Decimal;
+    variationImage: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface QuestionnaireQuestionnaireOptions
+  extends Struct.ComponentSchema {
+  collectionName: 'components_questionnaire_questionnaire_options';
+  info: {
+    displayName: 'Questionnaire Options';
+  };
+  attributes: {
+    colorVariants: Schema.Attribute.Component<
+      'questionnaire.color-variant',
+      true
+    >;
+    description: Schema.Attribute.Text;
+    hasQuantity: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    price: Schema.Attribute.Decimal;
+    qImage: Schema.Attribute.Media<'images'>;
+    selectOptions: Schema.Attribute.Component<
+      'questionnaire.select-option',
+      true
+    >;
+    title: Schema.Attribute.String;
+    units: Schema.Attribute.Integer;
+  };
+}
+
+export interface QuestionnaireQuestions extends Struct.ComponentSchema {
+  collectionName: 'components_questionnaire_questions';
+  info: {
+    displayName: 'questions';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    questionOptions: Schema.Attribute.Component<
+      'questionnaire.questionnaire-options',
+      true
+    >;
+    questionType: Schema.Attribute.Enumeration<
+      [
+        'units',
+        'range',
+        'worktop-style',
+        'installation-type',
+        'flooring',
+        'sink-type',
+        'tap-type',
+        'storage-type',
+        'appliances',
+      ]
+    >;
+    title: Schema.Attribute.Text;
+    toolTip: Schema.Attribute.Text;
+  };
+}
+
+export interface QuestionnaireSelectOption extends Struct.ComponentSchema {
+  collectionName: 'components_questionnaire_select_options';
+  info: {
+    displayName: 'Select Option';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    price: Schema.Attribute.Decimal;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsBlogPostsTeaser extends Struct.ComponentSchema {
   collectionName: 'components_sections_blog_posts_teasers';
   info: {
@@ -502,6 +580,10 @@ export interface SharedTestimonial extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'questionnaire.color-variant': QuestionnaireColorVariant;
+      'questionnaire.questionnaire-options': QuestionnaireQuestionnaireOptions;
+      'questionnaire.questions': QuestionnaireQuestions;
+      'questionnaire.select-option': QuestionnaireSelectOption;
       'sections.blog-posts-teaser': SectionsBlogPostsTeaser;
       'sections.category-highlight': SectionsCategoryHighlight;
       'sections.faq-section': SectionsFaqSection;

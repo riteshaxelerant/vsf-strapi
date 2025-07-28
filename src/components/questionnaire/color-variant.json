@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_questionnaire_color_variants",
+  "info": {
+    "displayName": "Color Variant"
+  },
+  "options": {},
+  "attributes": {
+    "colorName": {
+      "type": "string"
+    },
+    "colorCode": {
+      "type": "string"
+    },
+    "variationImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

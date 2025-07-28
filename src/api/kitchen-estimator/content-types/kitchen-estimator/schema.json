@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "kitchen_estimators",
+  "info": {
+    "singularName": "kitchen-estimator",
+    "pluralName": "kitchen-estimators",
+    "displayName": "kitchenEstimator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "dynamiczone",
+      "components": [
+        "questionnaire.questions"
+      ]
+    }
+  }
+}

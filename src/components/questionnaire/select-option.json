@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_questionnaire_select_options",
+  "info": {
+    "displayName": "Select Option"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    }
+  },
+  "config": {}
+}

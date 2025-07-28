@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_questionnaire_questionnaire_options",
+  "info": {
+    "displayName": "Questionnaire Options"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "qImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "hasQuantity": {
+      "type": "boolean",
+      "default": false
+    },
+    "units": {
+      "type": "integer"
+    },
+    "selectOptions": {
+      "type": "component",
+      "component": "questionnaire.select-option",
+      "repeatable": true
+    },
+    "colorVariants": {
+      "type": "component",
+      "component": "questionnaire.color-variant",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
