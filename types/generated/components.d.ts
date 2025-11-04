@@ -207,6 +207,19 @@ export interface SectionsHeroBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsHotspotScene extends Struct.ComponentSchema {
+  collectionName: 'components_sections_hotspot_scenes';
+  info: {
+    displayName: 'HotspotScene';
+  };
+  attributes: {
+    bgImage: Schema.Attribute.Media<'images'>;
+    description: Schema.Attribute.Text;
+    hotspot: Schema.Attribute.Component<'shared.hotspot', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsImageCarousel extends Struct.ComponentSchema {
   collectionName: 'components_sections_image_carousels';
   info: {
@@ -413,6 +426,35 @@ export interface SharedFeature extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHotspot extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hotspots';
+  info: {
+    displayName: 'Hotspot';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    x_position: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 0;
+        },
+        number
+      >;
+    y_position: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+          min: 0;
+        },
+        number
+      >;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -589,6 +631,7 @@ declare module '@strapi/strapi' {
       'sections.faq-section': SectionsFaqSection;
       'sections.feature-grid': SectionsFeatureGrid;
       'sections.hero-banner': SectionsHeroBanner;
+      'sections.hotspot-scene': SectionsHotspotScene;
       'sections.image-carousel': SectionsImageCarousel;
       'sections.product-slider': SectionsProductSlider;
       'sections.promotional-cta': SectionsPromotionalCta;
@@ -597,6 +640,7 @@ declare module '@strapi/strapi' {
       'shared.category-card': SharedCategoryCard;
       'shared.faq-item': SharedFaqItem;
       'shared.feature': SharedFeature;
+      'shared.hotspot': SharedHotspot;
       'shared.media': SharedMedia;
       'shared.post-teaser': SharedPostTeaser;
       'shared.product-slide': SharedProductSlide;

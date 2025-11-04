@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_hotspot_scenes",
+  "info": {
+    "displayName": "HotspotScene"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "hotspot": {
+      "type": "component",
+      "component": "shared.hotspot",
+      "repeatable": true
+    },
+    "bgImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

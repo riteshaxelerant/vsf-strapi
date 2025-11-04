@@ -66,7 +66,8 @@
         "sections.category-highlight",
         "sections.image-carousel",
         "sections.feature-grid",
-        "shared.category-card"
+        "shared.category-card",
+        "sections.hotspot-scene"
       ]
     }
   }

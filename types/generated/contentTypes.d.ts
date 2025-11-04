@@ -553,6 +553,7 @@ export interface ApiKitchenEstimatorKitchenEstimator
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -598,6 +599,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'sections.image-carousel',
         'sections.feature-grid',
         'shared.category-card',
+        'sections.hotspot-scene',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
