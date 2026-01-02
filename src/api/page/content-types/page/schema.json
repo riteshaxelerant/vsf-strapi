@@ -69,6 +69,15 @@
         "shared.category-card",
         "sections.hotspot-scene"
       ]
+    },
+    "mCategories": {
+      "type": "customField",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "customField": "plugin::load-commerce-fields.commerce_categories_input"
     }
   }
 }
